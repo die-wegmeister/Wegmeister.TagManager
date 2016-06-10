@@ -1,0 +1,46 @@
+'Wegmeister.TagManager:DefaultGroup':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        default:
+          label: i18n
+          position: 10
+          tab: default
+
+'Wegmeister.TagManager:TagMixin':
+  abstract: true
+  superTypes:
+    'Wegmeister.TagManager:DefaultGroup': true
+  properties:
+    tag:
+      type: string
+      defaultValue: ''
+      ui:
+        label: i18n
+        position: 50
+        inspector:
+          group: default
+          editorOptions:
+            dataSourceIdentifier: wegmeister-tagmanager-sources
+            dataSourceAdditionalData: []
+            placeholder: i18n
+
+
+'Wegmeister.TagManager:TagsMixin':
+  abstract: true
+  superTypes:
+    'Wegmeister.TagManager:DefaultGroup': true
+  properties:
+    tags:
+      type: array
+      defaultValue: []
+      ui:
+        label: i18n
+        position: 50
+        inspector:
+          group: default
+          editorOptions:
+            dataSourceIdentifier: wegmeister-tagmanager-sources
+            dataSourceAdditionalData: []
+            placeholder: i18n

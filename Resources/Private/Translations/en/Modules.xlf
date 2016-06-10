@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Wegmeister.TagManager" source-language="en" datatype="plaintext">
+    <body>
+      <!-- Management -->
+      <trans-unit id="tagmanager.label" xml:space="preserve">
+        <source>Tagmanager</source>
+      </trans-unit>
+      <trans-unit id="tag.description" xml:space="preserve">
+        <source>Manage tags and group them together for different use cases</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

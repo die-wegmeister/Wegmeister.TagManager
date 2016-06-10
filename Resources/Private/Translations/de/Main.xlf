@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Wegmeister.TagManager" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="tagmanager.tags.title" xml:space="preserve" approved="yes">
+        <source>Tags</source>
+        <target xml:lang="de">Tags</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.noTags" xml:space="preserve" approved="yes">
+        <source>No tags created yet.</source>
+        <target xml:lang="de">Es wurden noch keine Tags erstellt.</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.createTag" xml:space="preserve" approved="yes">
+        <source>Create new tag</source>
+        <target xml:lang="de">Neuen Tag erstellen</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.editTag" xml:space="preserve" approved="yes">
+        <source>Edit tag "{0}"</source>
+        <target xml:lang="de">Tag "{0}" bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.deleteTag" xml:space="preserve" approved="yes">
+        <source>Delete</source>
+        <target xml:lang="de">Löschen</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.delete" xml:space="preserve" approved="yes">
+        <source>Do you really want to delete the tag "{0}"? This operation cannot be undone!</source>
+        <target xml:lang="de">Wollen Sie den Tag "{0}" wirklich löschen? Dies kann nicht rückgängig gemacht werden!</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.deleteModalConfirm" xml:space="preserve" approved="yes">
+        <source>Yes, delete the tag</source>
+        <target xml:lang="de">Ja, Tag wirklich löschen</target>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.tags.newTag" xml:space="preserve" approved="yes">
+        <source>New tag</source>
+        <target xml:lang="de">Neuer Tag</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.newTagInfo" xml:space="preserve" approved="yes">
+        <source>Just fill out the following form to create a new tag:</source>
+        <target xml:lang="de">Tragen Sie den Namen des neuen Tags ein:</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.tagName" xml:space="preserve" approved="yes">
+        <source>Tag name</source>
+        <target xml:lang="de">Tag-Name</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.link" xml:space="preserve" approved="yes">
+        <source>Link</source>
+        <target xml:lang="de">Link</target>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.tags.showTag" xml:space="preserve" approved="yes">
+        <source>Show tag "{0}"</source>
+        <target xml:lang="de">Tag "{0}" anschauen</target>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.tags.update" xml:space="preserve" approved="yes">
+        <source>Save changes</source>
+        <target xml:lang="de">Änderungen speichern</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

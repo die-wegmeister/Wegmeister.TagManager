@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Wegmeister.TagManager" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="properties.tag" xml:space="preserve" approved="yes">
+        <source>Tag</source>
+        <target xml:lang="de">Tag</target>
+      </trans-unit>
+      <trans-unit id="properties.tag.selectBoxEditor.placeholder" xml:space="preserve" approved="yes">
+        <source>Choose tag</source>
+        <target xml:lang="de">Tag auswählen</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

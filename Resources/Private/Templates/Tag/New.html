@@ -1,0 +1,27 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Title">{neos:backend.translate(id: 'tagmanager.tags.newTag', value: 'New Tag')}</f:section>
+
+<f:section name="Content">
+    <p>{neos:backend.translate(id: 'tagmanager.tags.newTagInfo', value: 'Just fill out the following form to create a new tag:')}</p>
+    <f:render partial="Module/FieldValidationResults" />
+
+    <f:form action="create" objectName="newTag">
+        <ol>
+            <li>
+                <label for="name">{neos:backend.translate(id: 'tagmanager.tags.tagName', value: 'Tag name')}</label>
+                <f:form.textfield property="name" id="name" />
+            </li>
+
+            <li>
+                <label for="link">{neos:backend.translate(id: 'tagmanager.tags.link', value: 'Link')}</label>
+                <f:form.textfield property="link" id="link" />
+            </li>
+
+            <li>
+                <f:form.submit value="{neos:backend.translate(id: 'tagmanager.tags.createTag', value: 'Create new tag')}" class="neos-button neos-button-primary" />
+            </li>
+        </ol>
+    </f:form>
+</f:section>

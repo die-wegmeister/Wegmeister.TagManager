@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Wegmeister.TagManager" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="tagmanager.tags.title" xml:space="preserve">
+        <source>Tags</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.noTags" xml:space="preserve">
+        <source>No tags created yet.</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.createTag" xml:space="preserve">
+        <source>Create new tag</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.editTag" xml:space="preserve">
+        <source>Edit</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.deleteTag" xml:space="preserve">
+        <source>Delete</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.delete" xml:space="preserve">
+        <source>Do you really want to delete the tag "{0}"? This operation cannot be undone!</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.deleteModalConfirm" xml:space="preserve">
+        <source>Yes, delete the tag</source>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.tags.newTag" xml:space="preserve">
+        <source>New tag</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.newTagInfo" xml:space="preserve">
+        <source>Just fill out the following form to create a new tag:</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.tagName" xml:space="preserve">
+        <source>Tag name</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.tags.link" xml:space="preserve">
+        <source>Link</source>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.tags.showTag" xml:space="preserve">
+        <source>Show tag "{0}"</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
