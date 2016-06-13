@@ -19,8 +19,8 @@
         <target xml:lang="de">Tag "{0}" bearbeiten</target>
       </trans-unit>
       <trans-unit id="tagmanager.tags.deleteTag" xml:space="preserve" approved="yes">
-        <source>Delete</source>
-        <target xml:lang="de">Löschen</target>
+        <source>Delete tag</source>
+        <target xml:lang="de">Tag löschen</target>
       </trans-unit>
       <trans-unit id="tagmanager.tags.delete" xml:space="preserve" approved="yes">
         <source>Do you really want to delete the tag "{0}"? This operation cannot be undone!</source>
@@ -43,10 +43,6 @@
         <source>Tag name</source>
         <target xml:lang="de">Tag-Name</target>
       </trans-unit>
-      <trans-unit id="tagmanager.tags.link" xml:space="preserve" approved="yes">
-        <source>Link</source>
-        <target xml:lang="de">Link</target>
-      </trans-unit>
 
       <trans-unit id="tagmanager.tags.showTag" xml:space="preserve" approved="yes">
         <source>Show tag "{0}"</source>
@@ -54,6 +50,62 @@
       </trans-unit>
 
       <trans-unit id="tagmanager.tags.update" xml:space="preserve" approved="yes">
+        <source>Save changes</source>
+        <target xml:lang="de">Änderungen speichern</target>
+      </trans-unit>
+
+
+      <trans-unit id="tagmanager.groups.title" xml:space="preserve" approved="yes">
+        <source>Groups</source>
+        <target xml:lang="de">Gruppen</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.noGroups" xml:space="preserve" approved="yes">
+        <source>No groups created yet.</source>
+        <target xml:lang="de">Es wurden noch keine Gruppen erstellt.</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.groupName" xml:space="preserve" approved="yes">
+        <source>Group name</source>
+        <target xml:lang="de">Gruppenname</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.createGroup" xml:space="preserve" approved="yes">
+        <source>Create new group</source>
+        <target xml:lang="de">Neue Gruppe erstellen</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.editGroup" xml:space="preserve" approved="yes">
+        <source>Edit group "{0}"</source>
+        <target xml:lang="de">Gruppe "{0}" bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.deleteGroup" xml:space="preserve" approved="yes">
+        <source>Delete group</source>
+        <target xml:lang="de">Gruppe löschen</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.delete" xml:space="preserve" approved="yes">
+        <source>Do you really want to delete the group "{0}"? This operation cannot be undone!</source>
+        <target xml:lang="de">Wollen Sie die Gruppe "{0}" wirklich löschen? Dies kann nicht rückgängig gemacht werden!</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.deleteModalConfirm" xml:space="preserve" approved="yes">
+        <source>Yes, delete the group</source>
+        <target xml:lang="de">Ja, Gruppe wirklich löschen</target>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.groups.newGroup" xml:space="preserve" approved="yes">
+        <source>New group</source>
+        <target xml:lang="de">Neue Gruppe</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.newGroupInfo" xml:space="preserve" approved="yes">
+        <source>Just fill out the following form to create a new group:</source>
+        <target xml:lang="de">Tragen Sie den Namen der neuen Gruppe ein:</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.groupName" xml:space="preserve" approved="yes">
+        <source>Group name</source>
+        <target xml:lang="de">Name der Gruppe</target>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.showGroup" xml:space="preserve" approved="yes">
+        <source>Show group "{0}"</source>
+        <target xml:lang="de">Gruppe "{0}" anschauen</target>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.groups.update" xml:space="preserve" approved="yes">
         <source>Save changes</source>
         <target xml:lang="de">Änderungen speichern</target>
       </trans-unit>

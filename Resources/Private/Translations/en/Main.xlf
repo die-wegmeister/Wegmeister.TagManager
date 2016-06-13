@@ -40,6 +40,49 @@
       <trans-unit id="tagmanager.tags.showTag" xml:space="preserve">
         <source>Show tag "{0}"</source>
       </trans-unit>
+
+
+      <trans-unit id="tagmanager.groups.title" xml:space="preserve">
+        <source>Groups</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.noGroups" xml:space="preserve">
+        <source>No groups created yet.</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.groupName" xml:space="preserve">
+        <source>Group name</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.createGroup" xml:space="preserve">
+        <source>Create new group</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.editGroup" xml:space="preserve">
+        <source>Edit group "{0}"</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.deleteGroup" xml:space="preserve">
+        <source>Delete group</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.delete" xml:space="preserve">
+        <source>Do you really want to delete the group "{0}"? This operation cannot be undone!</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.deleteModalConfirm" xml:space="preserve">
+        <source>Yes, delete the group</source>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.groups.newGroup" xml:space="preserve">
+        <source>New group</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.newGroupInfo" xml:space="preserve">
+        <source>Just fill out the following form to create a new group:</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.groupName" xml:space="preserve">
+        <source>Group name</source>
+      </trans-unit>
+      <trans-unit id="tagmanager.groups.showGroup" xml:space="preserve">
+        <source>Show group "{0}"</source>
+      </trans-unit>
+
+      <trans-unit id="tagmanager.groups.update" xml:space="preserve">
+        <source>Save changes</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
