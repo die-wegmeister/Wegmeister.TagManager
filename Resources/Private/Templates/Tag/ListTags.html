@@ -1,0 +1,63 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Title">{neos:backend.translate(id: 'tagmanager.tags.title', value: 'Tags for group "{0}"', arguments: {0: group.name})}</f:section>
+
+<f:section name="Content">
+    <p class="breadcrumps">
+      <f:link.action action="index">Tagmanager</f:link.action> • <f:link.action action="listTags" arguments="{group: group}">{group.name}</f:link.action>
+    </p>
+    <f:if condition="{tags}">
+      <f:then>
+        <table class="neos-table">
+          <thead>
+            <tr>
+              <th>{neos:backend.translate(id: 'tagmanager.tags.tagName', value: 'Tag name')}</th>
+              <th width="60">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <f:for each="{tags}" key="index" as="tag">
+              <tr>
+                <td><f:link.action action="showTag" arguments="{tag: tag}">{tag.name}</f:link.action></td>
+                <td class="neos-action">
+                  <div class="neos-pull-right">
+                    <f:link.action action="editTag" arguments="{tag: tag}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.tags.editTag', value: 'Edit tag \"{0}\"', arguments: {0: tag.name})}">
+                      <i class="icon-pencil icon-white"></i>
+                    </f:link.action>
+
+                    <button class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'tagmanager.tags.deleteTag', value: 'Delete')}" data-toggle="modal" href="#tag-{index}">
+                      <i class="icon-trash icon-white"></i>
+                    </button>
+                    <div class="neos-hide" id="tag-{index}">
+                      <div class="neos-modal">
+                        <div class="neos-modal-header">
+                          <button type="button" class="neos-close neos-button" data-dismiss="modal"></button>
+                          <div class="neos-header">{neos:backend.translate(id: 'tagmanager.tags.delete', value: 'Do you really want to delete the tag "{0}"?', arguments: {0: tag.name})}</div>
+                        </div>
+                        <div class="neos-modal-footer">
+                          <a href="#" class="neos-button" data-dismiss="modal">{neos:backend.translate(id: 'cancel', value: 'Cancel', package: 'TYPO3.Neos')}</a>
+                          <f:form action="deleteTag" arguments="{tag: tag}" class="neos-inline">
+                            <button type="submit" class="neos-button neos-button-danger" title="Delete Participant">
+                              {neos:backend.translate(id: 'tagmanager.tags.deleteModalConfirm', value: 'Yes, delete the tag')}
+                            </button>
+                          </f:form>
+                        </div>
+                      </div>
+                      <div class="neos-modal-backdrop neos-in"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </f:for>
+          </tbody>
+        </table>
+      </f:then>
+      <f:else>
+        <p>{neos:backend.translate(id: 'tagmanager.tags.noTags', value: 'No tags created yet.')}</p>
+      </f:else>
+    </f:if>
+    <div class="neos-footer">
+      <f:link.action action="newTag" arguments="{group: group}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.tags.createTag', value: 'Create new tag')}">{neos:backend.translate(id: 'tagmanager.tags.createTag', value: 'Create new tag')}</f:link.action>
+    </div>
+</f:section>
