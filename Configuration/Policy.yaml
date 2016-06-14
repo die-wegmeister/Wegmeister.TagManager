@@ -1,7 +1,7 @@
 privilegeTargets:
   TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
     'Wegmeister.TagManager:Backend.TagActions':
-      matcher: 'method(Wegmeister\TagManager\Controller\Tag(|Group)Controller->(.*)Action())'
+      matcher: 'method(Wegmeister\TagManager\Controller\TagController->(.*)Action())'
 
 
 roles:

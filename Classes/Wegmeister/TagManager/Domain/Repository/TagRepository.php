@@ -19,7 +19,7 @@ class TagRepository extends Repository
      * @var array
      */
     protected $defaultOrderings = [
-        'group.name' => QueryInterface::ORDER_ASCENDING,
+        'groupname.name' => QueryInterface::ORDER_ASCENDING,
         'name' => QueryInterface::ORDER_ASCENDING
     ];
 
@@ -27,15 +27,26 @@ class TagRepository extends Repository
     /**
      * Find tags that are in one of the given groups.
      *
-     * @param array $groups
+     * @param array<\Wegmeister\TagManager\Domain\Model\Group> $groups
      * @return mixed
      */
-    public function findByGroups(array $groups)
+    public function findByGroups(array $groups = [], $caseSensitive = true, $cacheResult = false)
     {
-        /**
-         * @TODO
-         */
-        return $this->findAll();
+        if ($groups === []) {
+            return $this->findAll();
+        }
+        $caseSensitive = (boolean)$caseSensitive;
+        $cacheResult = (boolean)$cacheResult;
+        $query = $this->createQuery();
+
+        $constraints = [];
+        // $constraints[] = $query->in('groupname', $groups);
+        foreach ($groups as $group) {
+            $constraints[] = $query->like('groupname.name', $group->getName(), $caseSensitive);
+        }
+        $query->matching($query->logicalOr($constraints));
+
+        return $query->execute($cacheResult);
     }
 
 }

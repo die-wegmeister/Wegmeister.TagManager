@@ -3,7 +3,7 @@
   <file original="" product-name="Wegmeister.TagManager" source-language="en" datatype="plaintext">
     <body>
       <trans-unit id="tagmanager.tags.title" xml:space="preserve">
-        <source>Tags</source>
+        <source>Tags for group "{0}"</source>
       </trans-unit>
       <trans-unit id="tagmanager.tags.noTags" xml:space="preserve">
         <source>No tags created yet.</source>
@@ -33,8 +33,8 @@
       <trans-unit id="tagmanager.tags.tagName" xml:space="preserve">
         <source>Tag name</source>
       </trans-unit>
-      <trans-unit id="tagmanager.tags.link" xml:space="preserve">
-        <source>Link</source>
+      <trans-unit id="tagmanager.tags.tagGroup" xml:space="preserve">
+        <source>Tag group</source>
       </trans-unit>
 
       <trans-unit id="tagmanager.tags.showTag" xml:space="preserve">

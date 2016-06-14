@@ -3,8 +3,8 @@
   <file original="" product-name="Wegmeister.TagManager" source-language="en" datatype="plaintext" target-language="de">
     <body>
       <trans-unit id="tagmanager.tags.title" xml:space="preserve" approved="yes">
-        <source>Tags</source>
-        <target xml:lang="de">Tags</target>
+        <source>Tags for group "{0}"</source>
+        <target xml:lang="de">Tags der Gruppe "{0}"</target>
       </trans-unit>
       <trans-unit id="tagmanager.tags.noTags" xml:space="preserve" approved="yes">
         <source>No tags created yet.</source>
@@ -43,6 +43,10 @@
         <source>Tag name</source>
         <target xml:lang="de">Tag-Name</target>
       </trans-unit>
+      <trans-unit id="tagmanager.tags.tagGroup" xml:space="preserve" approved="yes">
+        <source>Tag group</source>
+        <target xml:lang="de">Tag-Gruppe</target>
+      </trans-unit>
 
       <trans-unit id="tagmanager.tags.showTag" xml:space="preserve" approved="yes">
         <source>Show tag "{0}"</source>
@@ -80,8 +84,8 @@
         <target xml:lang="de">Gruppe löschen</target>
       </trans-unit>
       <trans-unit id="tagmanager.groups.delete" xml:space="preserve" approved="yes">
-        <source>Do you really want to delete the group "{0}"? This operation cannot be undone!</source>
-        <target xml:lang="de">Wollen Sie die Gruppe "{0}" wirklich löschen? Dies kann nicht rückgängig gemacht werden!</target>
+        <source>Do you really want to delete the group "{0}"? This will delete the group and all the tags created in this group! This operation cannot be undone!</source>
+        <target xml:lang="de">Wollen Sie die Gruppe "{0}" wirklich löschen? Dadurch wird die Gruppe und alle Tags, die zur Gruppe gehören, gelöscht! Dies kann nicht rückgängig gemacht werden!</target>
       </trans-unit>
       <trans-unit id="tagmanager.groups.deleteModalConfirm" xml:space="preserve" approved="yes">
         <source>Yes, delete the group</source>

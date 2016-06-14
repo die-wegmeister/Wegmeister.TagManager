@@ -18,6 +18,7 @@ class Tag
      * @var string
      * @Flow\Validate(type="NotEmpty")
      * @Flow\Validate(type="StringLength", options={ "maximum"=255 })
+     * @Flow\Identity
      */
     protected $name;
 
@@ -25,8 +26,9 @@ class Tag
      * @var Group
      * @ORM\ManyToOne(targetEntity="\Wegmeister\TagManager\Domain\Model\Group")
      * @Flow\Validate(type="NotEmpty")
+     * @Flow\Identity
      */
-    protected $group;
+    protected $groupname;
 
 
     /**
@@ -59,18 +61,18 @@ class Tag
     /**
      * @return Group
      */
-    public function getGroup()
+    public function getGroupname()
     {
-        return $this->group;
+        return $this->groupname;
     }
 
     /**
-     * @param Group $group
+     * @param Group $groupname
      * @return void
      */
-    public function setGroup(Group $group)
+    public function setGroupname(Group $groupname)
     {
-        $this->group = $group;
+        $this->groupname = $groupname;
     }
 
 }

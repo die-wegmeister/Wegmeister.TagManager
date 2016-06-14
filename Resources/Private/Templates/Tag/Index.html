@@ -1,42 +1,48 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <f:layout name="Default" />
 
-<f:section name="Title">{neos:backend.translate(id: 'tagmanager.tags.title', value: 'Title')}</f:section>
+<f:section name="Title">{neos:backend.translate(id: 'tagmanager.groups.title', value: 'Title')}</f:section>
 
 <f:section name="Content">
-    <f:if condition="{tags}">
+    <p class="breadcrumps">
+      <f:link.action action="index">Tagmanager</f:link.action>
+    </p>
+    <f:if condition="{groups}">
       <f:then>
         <table class="neos-table">
           <thead>
             <tr>
-              <th>{neos:backend.translate(id: 'tagmanager.tags.tagName', value: 'Tag name')}</th>
+              <th>{neos:backend.translate(id: 'tagmanager.groups.groupName', value: 'Group name')}</th>
               <th width="60">&nbsp;</th>
             </tr>
           </thead>
           <tbody>
-            <f:for each="{tags}" key="index" as="tag">
+            <f:for each="{groups}" key="index" as="group">
               <tr>
-                <td><f:link.action action="show" arguments="{tag: tag}">{tag.name}</f:link.action></td>
+                <td><f:link.action action="listTags" arguments="{group: group}">{group.name}</f:link.action></td>
                 <td class="neos-action">
                   <div class="neos-pull-right">
-                    <f:link.action action="edit" arguments="{tag: tag}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.tags.editTag', value: 'Edit tag \"{0}\"', arguments: {0: tag.name})}">
+                    <f:link.action action="index" controller="Tag" arguments="{group: group}" class="neos-button neos-button-primary">
+                      <i class="icon-eye icon-white"></i>
+                    </f:link.action>
+                    <f:link.action action="edit" arguments="{group: group}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.groups.editGroup', value: 'Edit group \"{0}\"', arguments: {0: group.name})}">
                       <i class="icon-pencil icon-white"></i>
                     </f:link.action>
 
-                    <button class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'tagmanager.tags.deleteTag', value: 'Delete')}" data-toggle="modal" href="#tag-{index}">
+                    <button class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'tagmanager.Groups.deleteGroup', value: 'Delete')}" data-toggle="modal" href="#group-{index}">
                       <i class="icon-trash icon-white"></i>
                     </button>
-                    <div class="neos-hide" id="tag-{index}">
+                    <div class="neos-hide" id="group-{index}">
                       <div class="neos-modal">
                         <div class="neos-modal-header">
                           <button type="button" class="neos-close neos-button" data-dismiss="modal"></button>
-                          <div class="neos-header">{neos:backend.translate(id: 'tagmanager.tags.delete', value: 'Do you really want to delete the tag "{0}"?', arguments: {0: tag.name})}</div>
+                          <div class="neos-header">{neos:backend.translate(id: 'tagmanager.groups.delete', value: 'Do you really want to delete the tag "{0}"?', arguments: {0: group.name})}</div>
                         </div>
                         <div class="neos-modal-footer">
                           <a href="#" class="neos-button" data-dismiss="modal">{neos:backend.translate(id: 'cancel', value: 'Cancel', package: 'TYPO3.Neos')}</a>
-                          <f:form action="delete" arguments="{tag: tag}" class="neos-inline">
+                          <f:form action="delete" arguments="{group: group}" class="neos-inline">
                             <button type="submit" class="neos-button neos-button-danger" title="Delete Participant">
-                              {neos:backend.translate(id: 'tagmanager.tags.deleteModalConfirm', value: 'Yes, delete the tag')}
+                              {neos:backend.translate(id: 'tagmanager.groups.deleteModalConfirm', value: 'Yes, delete the group')}
                             </button>
                           </f:form>
                         </div>
@@ -51,10 +57,10 @@
         </table>
       </f:then>
       <f:else>
-        <p>{neos:backend.translate(id: 'tagmanager.tags.noTags', value: 'No tags created yet.')}</p>
+        <p>{neos:backend.translate(id: 'tagmanager.groups.noGroups', value: 'No groups created yet.')}</p>
       </f:else>
     </f:if>
     <div class="neos-footer">
-      <f:link.action action="new" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.tags.createTag', value: 'Create new tag')}">{neos:backend.translate(id: 'tagmanager.tags.createTag', value: 'Create new tag')}</f:link.action>
+      <f:link.action action="new" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.groups.createGroup', value: 'Create new group')}">{neos:backend.translate(id: 'tagmanager.groups.createGroup', value: 'Create new group')}</f:link.action>
     </div>
 </f:section>

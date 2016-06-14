@@ -1,13 +1,13 @@
 TYPO3:
   Neos:
     modules:
-      management:
+      administration:
         submodules:
           tagmanager:
             label: 'Wegmeister.TagManager:Modules:tagmanager.label'
             controller: '\Wegmeister\TagManager\Controller\TagController'
             description: 'Wegmeister.TagManager:Modules:tag.description'
-            icon: icon-font
+            icon: icon-tags
             privilegeTarget: 'Wegmeister.TagManager:Backend.TagActions'
 
     userInterface:

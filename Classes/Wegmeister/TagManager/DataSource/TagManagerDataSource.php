@@ -14,6 +14,12 @@ class TagManagerDataSource extends AbstractDataSource
     protected $tagRepository;
 
     /**
+     * @Flow\Inject
+     * @var \Wegmeister\TagManager\Domain\Repository\GroupRepository
+     */
+    protected $groupRepository;
+
+    /**
      * @var string
      */
     static protected $identifier = 'wegmeister-tagmanager-sources';
@@ -27,12 +33,17 @@ class TagManagerDataSource extends AbstractDataSource
      */
     public function getData(NodeInterface $node = NULL, array $arguments) {
         $tags = [];
-        if (isset($arguments['groups'])) {
-            $tagsFromDb = $this->tagRepository->findByGroups($arguments['groups']);
+        if (isset($arguments['groups']) && $arguments['groups'] !== [] && $arguments['groups'] !== '') {
+            if (!is_array($arguments['groups'])) {
+                $arguments['groups'] = [$arguments['groups']];
+            }
+            $groups = $this->groupRepository->findByNames($arguments['groups'])->toArray();
+            $tagsFromDb = $this->tagRepository->findByGroups($groups);
             foreach ($tagsFromDb as $tag) {
                 $tags[] = [
                     'label' => $tag->getName(),
-                    'value' => $tag->getName()
+                    'value' => $tag->getName(),
+                    'group' => $tag->getGroupname()->getName()
                 ];
             }
         } else {
@@ -41,7 +52,7 @@ class TagManagerDataSource extends AbstractDataSource
                 $tags[] = [
                     'label' => $tag->getName(),
                     'value' => $tag->getName(),
-                    'group' => $tag->getGroup()->getName()
+                    'group' => $tag->getGroupname()->getName()
                 ];
             }
         }

@@ -22,4 +22,29 @@ class GroupRepository extends Repository
         'name' => QueryInterface::ORDER_ASCENDING
     ];
 
+
+    /**
+     * Find groups that are in the given group names.
+     *
+     * @param array<string> $names
+     * @return mixed
+     */
+    public function findByNames(array $names = [], $caseSensitive = true, $cacheResult = false)
+    {
+        if ($names === []) {
+            return $this->findAll();
+        }
+        $caseSensitive = (boolean)$caseSensitive;
+        $cacheResult = (boolean)$cacheResult;
+        $query = $this->createQuery();
+
+        $constraints = [];
+        foreach($names as $name) {
+            $constraints[] = $query->equals('name', $name, $caseSensitive);
+        }
+        $query->matching($query->logicalOr($constraints));
+
+        return $query->execute($cacheResult);
+    }
+
 }

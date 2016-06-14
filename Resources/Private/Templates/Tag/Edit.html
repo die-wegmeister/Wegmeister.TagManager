@@ -1,21 +1,19 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <f:layout name="Default" />
 
-<f:section name="Title">{neos:backend.translate(id: 'tagmanager.tags.editTag', value: 'Edit tag "{0}"', arguments: {0: tag.name})}</f:section>
+<f:section name="Title">{neos:backend.translate(id: 'tagmanager.groups.editGroup', value: 'Edit group "{0}"', arguments: {0: group.name})}</f:section>
 
 <f:section name="Content">
+    <p class="breadcrumps">
+      <f:link.action action="index">Tagmanager</f:link.action> • <f:link.action action="listTags" arguments="{group: group}">{group.name}</f:link.action>
+    </p>
     <f:render partial="Module/FieldValidationResults" />
 
-    <f:form action="update" object="{tag}" objectName="tag">
+    <f:form action="update" object="{group}" objectName="group">
         <ol>
             <li>
-                <label for="name">{neos:backend.translate(id: 'tagmanager.tags.tagName', value: 'Tag name')}</label>
+                <label for="name">{neos:backend.translate(id: 'tagmanager.groups.groupName', value: 'Group name')}</label>
                 <f:form.textfield property="name" id="name" />
-            </li>
-
-            <li>
-                <label for="link">{neos:backend.translate(id: 'tagmanager.tags.link', value: 'Link')}</label>
-                <f:form.textfield property="link" id="link" />
             </li>
 
             <li>

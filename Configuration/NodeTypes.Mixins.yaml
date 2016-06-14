@@ -21,9 +21,11 @@
         position: 50
         inspector:
           group: default
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: wegmeister-tagmanager-sources
-            dataSourceAdditionalData: []
+            dataSourceAdditionalData:
+              groups: []
             placeholder: i18n
 
 
@@ -33,14 +35,17 @@
     'Wegmeister.TagManager:DefaultGroup': true
   properties:
     tags:
-      type: array
-      defaultValue: []
+      type: string
+      defaultValue: '[]'
       ui:
         label: i18n
-        position: 50
+        position: 51
         inspector:
           group: default
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: wegmeister-tagmanager-sources
-            dataSourceAdditionalData: []
+            dataSourceAdditionalData:
+              groups: []
             placeholder: i18n
+            multiple: TRUE
