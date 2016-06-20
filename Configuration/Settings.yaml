@@ -1,7 +1,7 @@
 TYPO3:
   Neos:
     modules:
-      administration:
+      management:
         submodules:
           tagmanager:
             label: 'Wegmeister.TagManager:Modules:tagmanager.label'
