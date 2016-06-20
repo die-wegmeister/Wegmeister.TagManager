@@ -22,7 +22,7 @@ class TagManagerDataSource extends AbstractDataSource
     /**
      * @var string
      */
-    static protected $identifier = 'wegmeister-tagmanager-sources';
+    static protected $identifier = 'wegmeister-tagmanager-tags';
 
     /**
      * Get data

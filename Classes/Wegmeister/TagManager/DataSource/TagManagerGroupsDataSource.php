@@ -1,0 +1,40 @@
+<?php
+namespace Wegmeister\TagManager\DataSource;
+
+use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Neos\Service\DataSource\AbstractDataSource;
+use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+
+class TagManagerGroupsDataSource extends AbstractDataSource
+{
+    /**
+     * @Flow\Inject
+     * @var \Wegmeister\TagManager\Domain\Repository\GroupRepository
+     */
+    protected $groupRepository;
+
+    /**
+     * @var string
+     */
+    static protected $identifier = 'wegmeister-tagmanager-groups';
+
+    /**
+     * Get data
+     *
+     * @param NodeInterface $node The node that is currently edited (optional)
+     * @param array $arguments Additional arguments (key / value)
+     * @return array JSON serializable data
+     */
+    public function getData(NodeInterface $node = NULL, array $arguments) {
+        $groups = [];
+        $groupsFromDb = $this->groupRepository->findAll();
+        foreach ($groupsFromDb as $group) {
+            $groups[] = [
+                'label' => $group->getName(),
+                'value' => $group->getName()
+            ];
+        }
+
+        return $groups;
+    }
+}
