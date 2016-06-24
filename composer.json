@@ -2,6 +2,7 @@
     "name": "wegmeister/tagmanager",
     "type": "typo3-flow-plugin",
     "description": "Plugin to handle tags for blogs, events and others.",
+    "license": "MIT",
     "require": {
         "php": "^7.0",
         "typo3/neos": "*"
