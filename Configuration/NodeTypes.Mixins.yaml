@@ -36,7 +36,7 @@
   properties:
     tags:
       type: array
-      defaultValue: '[]'
+      defaultValue: []
       ui:
         label: i18n
         position: 51
