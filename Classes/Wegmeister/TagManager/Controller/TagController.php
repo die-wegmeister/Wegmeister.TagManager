@@ -161,7 +161,7 @@ class TagController extends ActionController
         $tag->setName(trim($tag->getName()));
         $this->tagRepository->update($tag);
         $this->addFlashMessage('Tag aktualisiert.');
-        $this->redirect('listTags', null, null, ['group' => $newTag->getGroupname()]);
+        $this->redirect('listTags', null, null, ['group' => $tag->getGroupname()]);
     }
 
     /**
@@ -172,7 +172,7 @@ class TagController extends ActionController
     {
         $this->tagRepository->remove($tag);
         $this->addFlashMessage('Tag entfernt.');
-        $this->redirect('listTags', null, null, ['group' => $newTag->getGroupname()]);
+        $this->redirect('listTags', null, null, ['group' => $tag->getGroupname()]);
     }
 
 }
