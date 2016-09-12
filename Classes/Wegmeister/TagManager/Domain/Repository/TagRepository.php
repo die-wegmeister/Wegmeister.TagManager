@@ -42,7 +42,7 @@ class TagRepository extends Repository
         $constraints = [];
         // $constraints[] = $query->in('groupname', $groups);
         foreach ($groups as $group) {
-            if ($group instanceof Wegmeister\TagManager\Domain\Model\Group) {
+            if ($group instanceof \Wegmeister\TagManager\Domain\Model\Group) {
                 $group = $group->getName();
             }
             $constraints[] = $query->like('groupname.name', $group, $caseSensitive);
