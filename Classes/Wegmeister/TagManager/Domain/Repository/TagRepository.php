@@ -5,9 +5,9 @@ namespace Wegmeister\TagManager\Domain\Repository;
  * This file is part of the Wegmeister.TagManager package.
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Persistence\Repository;
-use TYPO3\Flow\Persistence\QueryInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Persistence\Repository;
+use Neos\Flow\Persistence\QueryInterface;
 
 /**
  * @Flow\Scope("singleton")
@@ -42,7 +42,7 @@ class TagRepository extends Repository
         $constraints = [];
         // $constraints[] = $query->in('groupname', $groups);
         foreach ($groups as $group) {
-            if ($group instanceof \Wegmeister\TagManager\Domain\Model\Group) {
+            if ($group instanceof Wegmeister\TagManager\Domain\Model\Group) {
                 $group = $group->getName();
             }
             $constraints[] = $query->like('groupname.name', $group, $caseSensitive);

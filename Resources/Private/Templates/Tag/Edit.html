@@ -1,4 +1,4 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
 <f:layout name="Default" />
 
 <f:section name="Title">{neos:backend.translate(id: 'tagmanager.groups.editGroup', value: 'Edit group "{0}"', arguments: {0: group.name})}</f:section>
@@ -17,7 +17,7 @@
             </li>
 
             <li>
-                <f:form.submit value="{neos:backend.translate(id: 'applyChanges', value: 'Apply changes', package: 'TYPO3.Neos')}" class="neos-button neos-button-primary" />
+                <f:form.submit value="{neos:backend.translate(id: 'applyChanges', value: 'Apply changes', package: 'Neos.Neos')}" class="neos-button neos-button-primary" />
             </li>
         </ol>
     </f:form>

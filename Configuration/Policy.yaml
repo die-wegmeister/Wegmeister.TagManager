@@ -1,5 +1,5 @@
 privilegeTargets:
-  TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
     'Wegmeister.TagManager:Backend.TagActions':
       matcher: 'method(Wegmeister\TagManager\Controller\TagController->(.*)Action())'
 
@@ -8,16 +8,16 @@ roles:
   'Wegmeister.TagManager:TagManager':
     privileges:
       -
-        privilegeTarget: 'TYPO3.Neos:Backend.GeneralAccess'
+        privilegeTarget: 'Neos.Neos:Backend.GeneralAccess'
         permission: GRANT
       -
-        privilegeTarget: 'TYPO3.Neos:Backend.Module.Management'
+        privilegeTarget: 'Neos.Neos:Backend.Module.Management'
         permission: GRANT
       -
         privilegeTarget: 'Wegmeister.TagManager:Backend.TagActions'
         permission: GRANT
 
-  'TYPO3.Neos:Administrator':
+  'Neos.Neos:Administrator':
     privileges:
       -
         privilegeTarget: 'Wegmeister.TagManager:Backend.TagActions'

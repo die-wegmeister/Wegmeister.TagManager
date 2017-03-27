@@ -5,7 +5,7 @@ namespace Wegmeister\TagManager\Domain\Model;
  * This file is part of the Wegmeister.TagManager package.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

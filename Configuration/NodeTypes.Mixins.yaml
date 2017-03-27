@@ -5,7 +5,6 @@
       groups:
         default:
           label: i18n
-          position: 10
           tab: default
 
 'Wegmeister.TagManager:TagMixin':
@@ -18,10 +17,9 @@
       defaultValue: ''
       ui:
         label: i18n
-        position: 50
         inspector:
           group: default
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: wegmeister-tagmanager-tags
             dataSourceAdditionalData:
@@ -39,10 +37,9 @@
       defaultValue: []
       ui:
         label: i18n
-        position: 51
         inspector:
           group: default
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: wegmeister-tagmanager-tags
             dataSourceAdditionalData:
