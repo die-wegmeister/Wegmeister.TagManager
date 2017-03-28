@@ -5,8 +5,8 @@ namespace Wegmeister\TagManager\Controller;
  * This file is part of the Wegmeister.TagManager package.
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Mvc\Controller\ActionController;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Mvc\Controller\ActionController;
 use Wegmeister\TagManager\Domain\Model\Group;
 use Wegmeister\TagManager\Domain\Model\Tag;
 
