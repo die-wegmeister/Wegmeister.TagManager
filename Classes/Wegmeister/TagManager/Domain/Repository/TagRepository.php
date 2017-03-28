@@ -8,6 +8,7 @@ namespace Wegmeister\TagManager\Domain\Repository;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\Repository;
 use Neos\Flow\Persistence\QueryInterface;
+use Wegmeister\TagManager\Domain\Model\Group;
 
 /**
  * @Flow\Scope("singleton")
@@ -32,17 +33,21 @@ class TagRepository extends Repository
      */
     public function findByGroups(array $groups = [], $caseSensitive = true, $cacheResult = false)
     {
+
         if ($groups === []) {
             return $this->findAll();
         }
+
         $caseSensitive = (boolean)$caseSensitive;
         $cacheResult = (boolean)$cacheResult;
         $query = $this->createQuery();
 
         $constraints = [];
-        // $constraints[] = $query->in('groupname', $groups);
+        //$constraints[] = $query->in('groupname', $groups);
+
         foreach ($groups as $group) {
-            if ($group instanceof Wegmeister\TagManager\Domain\Model\Group) {
+
+            if ($group instanceof Group) {
                 $group = $group->getName();
             }
             $constraints[] = $query->like('groupname.name', $group, $caseSensitive);
