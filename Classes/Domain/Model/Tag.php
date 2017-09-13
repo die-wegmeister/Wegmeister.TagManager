@@ -28,7 +28,7 @@ class Tag
      * @Flow\Validate(type="NotEmpty")
      * @Flow\Identity
      */
-    protected $groupname;
+    protected $group;
 
 
     /**
@@ -63,19 +63,19 @@ class Tag
      * Get the group of this tag.
      * @return Group
      */
-    public function getGroupname()
+    public function getGroup()
     {
-        return $this->groupname;
+        return $this->group;
     }
 
     /**
      * Set the group of this tag.
-     * @param Group $groupname
+     * @param Group $group
      * @return void
      */
-    public function setGroupname(Group $groupname)
+    public function setGroup(Group $group)
     {
-        $this->groupname = $groupname;
+        $this->group = $group;
     }
 
     /**

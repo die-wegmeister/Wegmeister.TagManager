@@ -20,7 +20,7 @@ class TagRepository extends Repository
      * @var array
      */
     protected $defaultOrderings = [
-        'groupname.name' => QueryInterface::ORDER_ASCENDING,
+        'group.name' => QueryInterface::ORDER_ASCENDING,
         'name' => QueryInterface::ORDER_ASCENDING
     ];
 
@@ -50,7 +50,7 @@ class TagRepository extends Repository
             if ($group instanceof Group) {
                 $group = $group->getName();
             }
-            $constraints[] = $query->like('groupname.name', $group, $caseSensitive);
+            $constraints[] = $query->like('group.name', $group, $caseSensitive);
         }
         $query->matching($query->logicalOr($constraints));
 
