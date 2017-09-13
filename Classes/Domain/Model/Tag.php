@@ -32,8 +32,7 @@ class Tag
 
 
     /**
-     * Get Tag identifier
-     *
+     * Get Tag identifier.
      * @return string
      */
     public function getIdentifier()
@@ -42,6 +41,7 @@ class Tag
     }
 
     /**
+     * Get the name of this tag.
      * @return string
      */
     public function getName()
@@ -50,6 +50,7 @@ class Tag
     }
 
     /**
+     * Set the name of this tag.
      * @param string $name
      * @return void
      */
@@ -59,6 +60,7 @@ class Tag
     }
 
     /**
+     * Get the group of this tag.
      * @return Group
      */
     public function getGroupname()
@@ -67,6 +69,7 @@ class Tag
     }
 
     /**
+     * Set the group of this tag.
      * @param Group $groupname
      * @return void
      */
