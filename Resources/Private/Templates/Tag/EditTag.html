@@ -7,10 +7,37 @@
     <f:render partial="Module/FieldValidationResults" />
 
     <f:form action="updateTag" object="{tag}" objectName="tag">
-        <ol>
+        <ol class="list-space">
             <li>
                 <label for="name">{neos:backend.translate(id: 'tagmanager.tags.tagName', value: 'Tag name')}</label>
                 <f:form.textfield property="name" id="name" />
+            </li>
+            <li>
+                <label>Additional values (to delete them, simply enter an empty name and value):</label>
+                <ol class="additional-values">
+
+                    <f:for each="{tag.additionalValues}" as="value" key="key" iteration="iterator">
+                        <li>
+                            <label for="additional-{iterator.index}">
+                                Name: <input type="text" value="{key}" class="add-val">
+                            </label>
+                            Value: <f:form.textfield property="additionalValues.{key}" id="additional-{iterator.index}" />
+                        </li>
+                    </f:for>
+
+                    <li>
+                        <label>New additional values:</label>
+                        <label for="additional-new-0">
+                            Name: <input type="text" class="add-val">
+                        </label>
+                        Value: <f:form.textfield property="additionalValues.---" id="additional-new-0" />
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>
+                <input type="button" class="add-value neos-button" value="Add additional value">
             </li>
 
             <li>
@@ -18,4 +45,5 @@
             </li>
         </ol>
     </f:form>
+
 </f:section>

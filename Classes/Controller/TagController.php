@@ -137,6 +137,8 @@ class TagController extends ActionController
     public function createTagAction(Tag $newTag)
     {
         $newTag->setName(trim($newTag->getName()));
+        $this->removeInvalidAdditionalValues($newTag);
+
         $this->tagRepository->add($newTag);
         $this->addFlashMessage('Neuen tag erstellt.');
         $this->redirect('listTags', null, null, ['group' => $newTag->getGroup()]);
@@ -159,6 +161,8 @@ class TagController extends ActionController
     public function updateTagAction(Tag $tag)
     {
         $tag->setName(trim($tag->getName()));
+        $this->removeInvalidAdditionalValues($tag);
+
         $this->tagRepository->update($tag);
         $this->addFlashMessage('Tag aktualisiert.');
         $this->redirect('listTags', null, null, ['group' => $tag->getGroup()]);
@@ -173,6 +177,22 @@ class TagController extends ActionController
         $this->tagRepository->remove($tag);
         $this->addFlashMessage('Tag entfernt.');
         $this->redirect('listTags', null, null, ['group' => $tag->getGroup()]);
+    }
+
+    /**
+     * Remove invalid additional values from tag.
+     * @param Tag $tag
+     * @return void
+     */
+    protected function removeInvalidAdditionalValues(Tag $tag)
+    {
+        $additionalValues = $tag->getAdditionalValues();
+        foreach ($additionalValues as $key => $value) {
+            if ($key === '' || $key === '---' || is_int($key)) {
+                unset($additionalValues[$key]);
+            }
+        }
+        $tag->setAdditionalValues($additionalValues);
     }
 
 }

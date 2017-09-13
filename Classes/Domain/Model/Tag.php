@@ -30,6 +30,12 @@ class Tag
      */
     protected $group;
 
+    /**
+     * @ORM\Column(type="flow_json_array")
+     * @var array
+     */
+    protected $additionalValues;
+
 
     /**
      * Get Tag identifier.
@@ -76,6 +82,25 @@ class Tag
     public function setGroup(Group $group)
     {
         $this->group = $group;
+    }
+
+    /**
+     * Get additional values.
+     * @return array
+     */
+    public function getAdditionalValues()
+    {
+        return $this->additionalValues;
+    }
+
+    /**
+     * Set additional values.
+     * @param array $additionalValues
+     * @return void
+     */
+    public function setAdditionalValues(array $additionalValues)
+    {
+        $this->additionalValues = $additionalValues;
     }
 
     /**

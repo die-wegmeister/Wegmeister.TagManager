@@ -4,11 +4,14 @@
         <meta charset="utf-8">
         <title><f:render section="Title" /></title>
         <f:base />
+        <link rel="stylesheet" href="{f:uri.resource(path: 'css/styles.css', package: 'Wegmeister.TagManager')}">
     </head>
     <body>
         <f:flashMessages class="flashmessages" />
 
         <h1><f:render section="Title" /></h1>
         <f:render section="Content" />
+
+        <script src="{f:uri.resource(path: 'js/script.js', package: 'Wegmeister.TagManager')}"></script>
     </body>
 </html>
