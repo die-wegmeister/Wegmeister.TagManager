@@ -78,4 +78,12 @@ class Tag
         $this->groupname = $groupname;
     }
 
+    /**
+     * Transform object to string
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
