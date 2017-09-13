@@ -13,6 +13,20 @@
             <th>{neos:backend.translate(id: 'tagmanager.tags.tagGroup', value: 'Tag group')}</th>
             <td>{tag.group.name}</td>
         </tr>
+        <tr>
+            <th style="vertical-align: top" colspan="2"><h3>Additional values:</h3></th>
+        </tr>
+
+        <tr>
+            <th>Name:</th>
+            <th>Value:</th>
+        </tr>
+        <f:for each="{tag.additionalValues}" as="value" key="key">
+            <tr>
+                <td>{key}</td>
+                <td>{value}</td>
+            </tr>
+        </f:for>
     </table>
     <f:link.action action="index" class="neos-button neos-button-primary">{neos:backend.translate(id: 'back', value: 'Back', package: 'Neos.Neos')}</f:link.action>
 </f:section>
