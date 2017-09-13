@@ -59,7 +59,7 @@ class TagManagerDataSource extends AbstractDataSource
         foreach ($tagsFromDb as $tag) {
             $tags[] = [
                 'label' => $tag->getName(),
-                'value' => $this->getValue($tag),
+                'value' => $this->getValue($tag, $extended),
                 'group' => $tag->getGroup()->getName()
             ];
         }
