@@ -11,6 +11,15 @@ Neos:
             privilegeTarget: 'Wegmeister.TagManager:Backend.TagActions'
 
     userInterface:
+      inspector:
+        dataTypes:
+          'Wegmeister\TagManager\Domain\Model\Tag':
+            typeConverter: 'Neos\Neos\TypeConverter\EntityToIdentityConverter'
+            editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+            editorOptions:
+              dataSourceIdentifier: 'wegmeister-tagmanager-tags'
+              dataSourceAdditionalData:
+                extended: true
       translation:
         # Configure which localization sources should be automatically included.
         # The included sources are parsed into the xliff.json which is loaded by Neos
