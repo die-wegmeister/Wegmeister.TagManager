@@ -4,6 +4,8 @@ namespace Wegmeister\TagManager\DataSource;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\Utility\TypeHandling;
+use Wegmeister\TagManager\Domain\Model\Tag;
 
 class TagManagerDataSource extends AbstractDataSource
 {
@@ -18,6 +20,12 @@ class TagManagerDataSource extends AbstractDataSource
      * @var \Wegmeister\TagManager\Domain\Repository\GroupRepository
      */
     protected $groupRepository;
+
+    /**
+     * @Flow\Inject
+     * @var \Neos\Flow\Persistence\PersistenceManagerInterface
+     */
+    protected $persistenceManager;
 
     /**
      * @var string
@@ -39,24 +47,46 @@ class TagManagerDataSource extends AbstractDataSource
             }
             $groups = $this->groupRepository->findByNames($arguments['groups'])->toArray();
             $tagsFromDb = $this->tagRepository->findByGroups($groups);
-            foreach ($tagsFromDb as $tag) {
-                $tags[] = [
-                    'label' => $tag->getName(),
-                    'value' => $tag->getName(),
-                    'group' => $tag->getGroupname()->getName()
-                ];
-            }
         } else {
             $tagsFromDb = $this->tagRepository->findAll();
-            foreach ($tagsFromDb as $tag) {
-                $tags[] = [
-                    'label' => $tag->getName(),
-                    'value' => $tag->getName(),
-                    'group' => $tag->getGroupname()->getName()
-                ];
-            }
+        }
+
+        if (isset($arguments['extended']) && ($arguments['extended'] === true || $arguments['extended'] === 'true')) {
+            $extended = true;
+        } else {
+            $extended = false;
+        }
+        foreach ($tagsFromDb as $tag) {
+            $tags[] = [
+                'label' => $tag->getName(),
+                'value' => $this->getValue($tag),
+                'group' => $tag->getGroupname()->getName()
+            ];
         }
 
         return $tags;
+    }
+
+    /**
+     * Create the value to return. Depends on how the data should be returned.
+     * If argument "extended" is set to true, this will return an identity,
+     * so we can access all attributes of the tag.
+     * Otherwise this will return only the name of the tag.
+     *
+     * @param Tag $tag The tag to get the value for.
+     * @param boolean $extended Output extended value or only the name.
+     * @return string - Either just the name or a json encoded identity/type string.
+     */
+    protected function getValue(Tag $tag, bool $extended = false)
+    {
+        if ($extended) {
+            $value = json_encode([
+                '__identity' => $this->persistenceManager->getIdentifierByObject($tag),
+                '__type' => TypeHandling::getTypeForValue($tag)
+            ]);
+        } else {
+            $value = $tag->getName();
+        }
+        return $value;
     }
 }
