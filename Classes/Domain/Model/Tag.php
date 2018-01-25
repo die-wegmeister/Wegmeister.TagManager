@@ -28,7 +28,7 @@ class Tag
      * @Flow\Validate(type="NotEmpty")
      * @Flow\Identity
      */
-    protected $group;
+    protected $taggroup;
 
     /**
      * @ORM\Column(type="flow_json_array")
@@ -69,19 +69,19 @@ class Tag
      * Get the group of this tag.
      * @return Group
      */
-    public function getGroup()
+    public function getTaggroup()
     {
-        return $this->group;
+        return $this->taggroup;
     }
 
     /**
      * Set the group of this tag.
-     * @param Group $group
+     * @param Group $taggroup
      * @return void
      */
-    public function setGroup(Group $group)
+    public function setTaggroup(Group $taggroup)
     {
-        $this->group = $group;
+        $this->taggroup = $taggroup;
     }
 
     /**

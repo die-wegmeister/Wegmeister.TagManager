@@ -20,7 +20,7 @@ class TagRepository extends Repository
      * @var array
      */
     protected $defaultOrderings = [
-        'group.name' => QueryInterface::ORDER_ASCENDING,
+        'taggroup.name' => QueryInterface::ORDER_ASCENDING,
         'name' => QueryInterface::ORDER_ASCENDING
     ];
 
@@ -33,7 +33,6 @@ class TagRepository extends Repository
      */
     public function findByGroups(array $groups = [], $caseSensitive = true, $cacheResult = false)
     {
-
         if ($groups === []) {
             return $this->findAll();
         }
@@ -43,18 +42,16 @@ class TagRepository extends Repository
         $query = $this->createQuery();
 
         $constraints = [];
-        //$constraints[] = $query->in('groupname', $groups);
+        //$constraints[] = $query->in('taggroup', $groups);
 
         foreach ($groups as $group) {
-
             if ($group instanceof Group) {
                 $group = $group->getName();
             }
-            $constraints[] = $query->like('group.name', $group, $caseSensitive);
+            $constraints[] = $query->like('taggroup.name', $group, $caseSensitive);
         }
         $query->matching($query->logicalOr($constraints));
 
         return $query->execute($cacheResult);
     }
-
 }
