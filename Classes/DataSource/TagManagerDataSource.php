@@ -61,7 +61,7 @@ class TagManagerDataSource extends AbstractDataSource
             $tags[] = [
                 'label' => $tag->getName(),
                 'value' => $this->getValue($tag, $extended),
-                'group' => $tag->getGroup()->getName()
+                'group' => $tag->getTaggroup()->getName()
             ];
         }
 
