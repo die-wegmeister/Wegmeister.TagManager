@@ -6,8 +6,6 @@ namespace Wegmeister\TagManager\Domain\Model;
  */
 
 use Neos\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Flow\Entity
@@ -50,5 +48,4 @@ class Group
     {
         $this->name = $name;
     }
-
 }
