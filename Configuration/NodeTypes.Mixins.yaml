@@ -61,18 +61,3 @@
           group: default
           editorOptions:
             placeholder: i18n
-
-
-'Wegmeister.TagManager:ExtendedTagsMixin':
-  abstract: true
-  superTypes:
-    'Wegmeister.TagManager:DefaultGroup': true
-  properties:
-    extendedTags:
-      type: 'array<Wegmeister\TagManager\Domain\Model\Tag>'
-      ui:
-        label: i18n
-        inspector:
-          group: default
-          editorOptions:
-            placeholder: i18n
