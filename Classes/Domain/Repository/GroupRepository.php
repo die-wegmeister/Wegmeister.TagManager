@@ -39,12 +39,11 @@ class GroupRepository extends Repository
         $query = $this->createQuery();
 
         $constraints = [];
-        foreach($names as $name) {
+        foreach ($names as $name) {
             $constraints[] = $query->equals('name', $name, $caseSensitive);
         }
         $query->matching($query->logicalOr($constraints));
 
         return $query->execute($cacheResult);
     }
-
 }
