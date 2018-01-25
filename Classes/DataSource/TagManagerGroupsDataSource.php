@@ -1,9 +1,9 @@
 <?php
 namespace Wegmeister\TagManager\DataSource;
 
-    use Neos\Flow\Annotations as Flow;
-    use Neos\Neos\Service\DataSource\AbstractDataSource;
-    use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\Neos\Service\DataSource\AbstractDataSource;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 class TagManagerGroupsDataSource extends AbstractDataSource
 {
@@ -16,7 +16,7 @@ class TagManagerGroupsDataSource extends AbstractDataSource
     /**
      * @var string
      */
-    static protected $identifier = 'wegmeister-tagmanager-groups';
+    protected static $identifier = 'wegmeister-tagmanager-groups';
 
     /**
      * Get data
@@ -25,7 +25,8 @@ class TagManagerGroupsDataSource extends AbstractDataSource
      * @param array $arguments Additional arguments (key / value)
      * @return array JSON serializable data
      */
-    public function getData(NodeInterface $node = NULL, array $arguments) {
+    public function getData(NodeInterface $node = null, array $arguments)
+    {
         $groups = [];
         $groupsFromDb = $this->groupRepository->findAll();
         foreach ($groupsFromDb as $group) {

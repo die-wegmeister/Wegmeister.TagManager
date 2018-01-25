@@ -30,7 +30,7 @@ class TagManagerDataSource extends AbstractDataSource
     /**
      * @var string
      */
-    static protected $identifier = 'wegmeister-tagmanager-tags';
+    protected static $identifier = 'wegmeister-tagmanager-tags';
 
     /**
      * Get data
@@ -39,7 +39,8 @@ class TagManagerDataSource extends AbstractDataSource
      * @param array $arguments Additional arguments (key / value)
      * @return array JSON serializable data
      */
-    public function getData(NodeInterface $node = NULL, array $arguments) {
+    public function getData(NodeInterface $node = null, array $arguments)
+    {
         $tags = [];
         if (isset($arguments['groups']) && $arguments['groups'] !== [] && $arguments['groups'] !== '') {
             if (!is_array($arguments['groups'])) {
