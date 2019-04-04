@@ -22,7 +22,7 @@
                 <td><f:link.action action="listTags" arguments="{group: group}">{group.name}</f:link.action></td>
                 <td class="neos-action">
                   <div class="neos-pull-right">
-                    <f:link.action action="index" controller="Tag" arguments="{group: group}" class="neos-button neos-button-primary">
+                    <f:link.action action="show" controller="Tag" arguments="{group: group}" class="neos-button neos-button-primary">
                       <i class="fas fa-eye icon-eye icon-white"></i>
                     </f:link.action>
                     <f:link.action action="edit" arguments="{group: group}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.groups.editGroup', value: 'Edit group \"{0}\"', arguments: {0: group.name})}">
