@@ -23,11 +23,11 @@
                 <td class="neos-action">
                   <div class="neos-pull-right">
                     <f:link.action action="editTag" arguments="{tag: tag}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'tagmanager.tags.editTag', value: 'Edit tag \"{0}\"', arguments: {0: tag.name})}">
-                      <i class="icon-pencil icon-white"></i>
+                      <i class="fas fa-pencil icon-pencil icon-white"></i>
                     </f:link.action>
 
                     <button class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'tagmanager.tags.deleteTag', value: 'Delete')}" data-toggle="modal" href="#tag-{index}">
-                      <i class="icon-trash icon-white"></i>
+                      <i class="fas fa-trash icon-trash icon-white"></i>
                     </button>
                     <div class="neos-hide" id="tag-{index}">
                       <div class="neos-modal">
